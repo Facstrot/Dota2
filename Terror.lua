@@ -1,9 +1,9 @@
 local Terror = {}
-local optionAutoSunder = Menu.AddOption({"Hero Specific", "Terror"}, "Auto Sunder", "Auto cast sunder on enemies 
+local Terror.AutoSunder = Menu.AddOption({"Hero Specific", "Terror"}, "Auto Sunder", "Auto cast sunder on enemies 
 if the health is less than 25%")
 
 function Terror.OnUpdate()
-   if Menu.IsEnabled(optionAutoSunder) then
+   if Menu.IsEnabled(Terror.AutoSunder) then
         Terror.AutoSunder()
     end
 end
