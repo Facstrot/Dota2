@@ -1,13 +1,12 @@
 local Terror = {}
-local Terror.AutoSunder = Menu.AddOption({"Hero Specific", "Terror"}, "Auto Sunder", "Auto cast sunder on enemies 
-if the health is less than 25%")
+Terror.AutoSunder = Menu.AddOption({"Hero Specific", "Terror"}, "Auto Sunder", "Use Auto sunder")
+Terror.font = Renderer.LoadFont("Tahoma", 30, Enum.FontWeight.EXTRABOLD)
 
 function Terror.OnUpdate()
-   if Menu.IsEnabled(Terror.AutoSunder) then
-        Terror.AutoSunder()
-    end
+	
+   if not Menu.IsEnabled(Terror.AutoSunder) then return       
 end
-function Terror.AutoSunder()
+
     local myHero = Heroes.GetLocal()
     if not myHero then return end
     if NPC.GetUnitName(myHero) ~= "npc_dota_hero_terrorblade" then return end
